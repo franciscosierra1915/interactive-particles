@@ -50,12 +50,12 @@ void main() {
 
 	// touch
 	float t = texture2D(uTouch, puv).r;
-	displaced.z += t * 20.0 * rndz;
-	displaced.x += cos(angle) * t * 20.0 * rndz;
-	displaced.y += sin(angle) * t * 20.0 * rndz;
+	displaced.z += t * 20.0;
+	displaced.x += cos(angle) * t * 20.0;
+	displaced.y += sin(angle) * t * 20.0;
 
 	// particle size
-	float psize = (snoise_1_2(vec2(uTime, pindex) * 0.5) + 2.0);
+	float psize = (snoise_1_2(vec2(uTime, pindex) * 0.5) + 0.5);
 	psize *= max(grey, 0.2);
 	psize *= uSize;
 
